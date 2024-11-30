@@ -1,0 +1,134 @@
+/* General styles for all pages */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #101010; /* Dark base */
+    background-image: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent),
+        linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
+    background-size: 50px 50px; /* Diagonal wave size */
+    color: #ffffff; /* White text for contrast */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden; /* Prevent scroll issues with pattern */
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(34, 34, 34, 0.9); /* Semi-transparent black */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7); /* Strong shadow */
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffffff; /* Bright white for contrast */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #555, #fff);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+label {
+    font-weight: bold;
+    color: #cccccc; /* Subtle gray labels */
+}
+
+input, select, button, a {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #555; /* Border for inputs */
+    border-radius: 8px;
+    background: #222; /* Dark input background */
+    color: #fff;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #ffffff; /* White border on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+button, a {
+    background: linear-gradient(to right, #444, #333);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover, a:hover {
+    background: linear-gradient(to right, #555, #666);
+    transform: translateY(-3px); /* Lift effect */
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #bbbbbb; /* Soft gray */
+}
+
+/* Home page specific styling */
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.options a {
+    max-width: 200px;
+    background: linear-gradient(to right, #333, #444);
+    border: 2px solid #666;
+}
+
+.options a:hover {
+    background: linear-gradient(to right, #444, #555);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input, select, button, a {
+        width: 90%;
+    }
+
+    .options {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
